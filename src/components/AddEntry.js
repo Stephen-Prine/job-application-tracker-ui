@@ -9,6 +9,7 @@ const AddEntry = () => {
     notes: "",
     dateApplied: "",
   });
+  console.log(entry.dateApplied);
 
   const handleChange = (e) => {
     const value = e.target.value;
