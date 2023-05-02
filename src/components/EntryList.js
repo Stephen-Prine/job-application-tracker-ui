@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EntryService from "../services/EntryService";
 import Entry from "./Entry";
+import Joke from "./Joke";
 
 const EntryList = () => {
   const navigate = useNavigate();
@@ -57,6 +58,9 @@ const EntryList = () => {
               <th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
                 Notes
               </th>
+              <th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
+                Link to Company
+              </th>
               <th className="text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
                 Action
               </th>
@@ -75,6 +79,7 @@ const EntryList = () => {
           )}
         </table>
       </div>
+      <Joke />
     </div>
   );
 };

@@ -10,6 +10,7 @@ const UpdateEntry = () => {
     companyName: "",
     notes: "",
     dateApplied: "",
+    link: "",
   });
 
   const handleChange = (e) => {

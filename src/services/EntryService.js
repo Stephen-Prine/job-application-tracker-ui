@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const ENTRY_API_BASE_URL = "http://localhost:8080/api/v1/appEntry";
+const JOKE_API_BASE_URL = "https://official-joke-api.appspot.com/random_joke";
 
 class EntryService {
   saveEntry(entry) {
@@ -21,6 +22,10 @@ class EntryService {
 
   updateEntry(entry, id) {
     return axios.put(ENTRY_API_BASE_URL + "/" + id, entry);
+  }
+
+  getJoke() {
+    return axios.get(JOKE_API_BASE_URL);
   }
 }
 

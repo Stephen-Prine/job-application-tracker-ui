@@ -15,9 +15,16 @@ const Entry = ({ entry, deleteEntry }) => {
       </td>
       <td className="text-left px-6 py-4 whitespace-nowrap">
         <div className="text-sm text-gray-500">{entry.dateApplied}</div>
-      </td>
-      <td className="text-left px-6 py-4 whitespace-nowrap">
+      </td>{" "}
+      <td className="text-left px-6 py-4 whitespace-normal break-words">
         <div className="text-sm text-gray-500">{entry.notes}</div>
+      </td>
+      <td className="text-left px-6 py-4 whitespace-normal break-words">
+        <div className="text-sm text-blue-500">
+          <a className="hover:text-blue-800" target="_blank" href={entry.link}>
+            {entry.link}
+          </a>
+        </div>
       </td>
       <td className="text-right px-6 py-4 whitespace-nowrap font-medium text-sm">
         <a

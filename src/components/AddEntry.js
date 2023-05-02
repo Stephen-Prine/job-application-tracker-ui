@@ -8,8 +8,9 @@ const AddEntry = () => {
     companyName: "",
     notes: "",
     dateApplied: "",
+    link: "",
   });
-  console.log(entry.dateApplied);
+  console.log(entry.link);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -23,6 +24,7 @@ const AddEntry = () => {
       companyName: "",
       notes: "",
       dateApplied: "",
+      link: "",
     });
   };
 
@@ -68,11 +70,16 @@ const AddEntry = () => {
             onChange={(e) => handleChange(e)}
             className="rounded-md h-10 w-full border-solid"
           />
-          {/* <DatePick
-            name="dateApplied"
-            value={entry.dateApplied}
+          <label className="block my-1 text-gray-600 text-sm font-normal">
+            Link To Company
+          </label>
+          <input
+            type="text"
+            name="link"
+            value={entry.link}
             onChange={(e) => handleChange(e)}
-          /> */}
+            className="rounded-md h-10 w-full border-solid"
+          />
           <label className="block mt-4 text-gray-600 text-sm font-normal">
             Date Applied
           </label>
