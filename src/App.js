@@ -4,6 +4,7 @@ import AddEntry from "./components/AddEntry";
 
 import Navbar from "./components/Navbar";
 import EntryList from "./components/EntryList";
+import UpdateEntry from "./components/UpdateEntry";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<EntryList />} />
           <Route path="/entryList" element={<EntryList />} />
           <Route path="/addEntry" element={<AddEntry />} />
+          <Route path="/editEntry/:id" element={<UpdateEntry />} />
         </Routes>
       </BrowserRouter>
     </>

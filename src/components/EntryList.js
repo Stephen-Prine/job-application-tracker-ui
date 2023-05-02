@@ -1,19 +1,20 @@
-import React, { useImperativeHandle, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EntryService from "../services/EntryService";
+import Entry from "./Entry";
 
 const EntryList = () => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
-  const [entry, setEntry] = useState(null);
+  const [entries, setEntries] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
         const response = await EntryService.getEntries();
-        setEntry(response.data);
+        setEntries(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -21,6 +22,17 @@ const EntryList = () => {
     };
     fetchData();
   }, []);
+
+  const deleteEntry = (e, id) => {
+    e.preventDefault();
+    EntryService.deleteEntry(id).then((res) => {
+      if (entries) {
+        setEntries((prevElement) => {
+          return prevElement.filter((entries) => entries.id !== id);
+        });
+      }
+    });
+  };
 
   return (
     <div className="container mx-auto my-8">
@@ -52,31 +64,13 @@ const EntryList = () => {
           </thead>
           {!loading && (
             <tbody className="bg-white">
-              <tr>
-                <td className="text-left px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-500">Google</div>
-                </td>
-                <td className="text-left px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-500">2023-4-30</div>
-                </td>
-                <td className="text-left px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-500">
-                    DID not feel good about this one Need to work on data
-                    structures
-                  </div>
-                </td>
-                <td className="text-right px-6 py-4 whitespace-nowrap font-medium text-sm">
-                  <a
-                    href="#"
-                    className="text-indigo-600 hover:text-indigo-800 px-4"
-                  >
-                    Edit
-                  </a>
-                  <a href="#" className="text-indigo-600 hover:text-indigo-800">
-                    Delete
-                  </a>
-                </td>
-              </tr>
+              {entries.map((entry) => (
+                <Entry
+                  entry={entry}
+                  key={entry.id}
+                  deleteEntry={deleteEntry}
+                ></Entry>
+              ))}
             </tbody>
           )}
         </table>
