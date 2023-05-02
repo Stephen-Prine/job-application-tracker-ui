@@ -6,6 +6,10 @@ class EntryService {
   saveEntry(entry) {
     return axios.post(ENTRY_API_BASE_URL, entry);
   }
+
+  getEntries() {
+    return axios.get(ENTRY_API_BASE_URL);
+  }
 }
 
 export default new EntryService();
