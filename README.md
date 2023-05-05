@@ -11,4 +11,10 @@ I felt the need to keep a record of my job search journey for two main reasons:
 * Have a clear overview of all the companies I've applied to 
 * To maintain notes on what each company was looking for or not looking for in a candidate
 * I needed a project to work on while learning React. So I thought of this idea as I was putting job posting information in a notepad. 
-    
+   
+   
+## Short Demo
+[video.webm](https://user-images.githubusercontent.com/95665904/236566128-4e6d8459-2e12-4799-88ce-c1db07bfcdab.webm)
+
+## Just a funny little bonus 
+I connected the app to a Random Joke API endpoint to keep me motivated and to add to my absurd joke repertoire. 
