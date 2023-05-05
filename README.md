@@ -18,3 +18,6 @@ I felt the need to keep a record of my job search journey for two main reasons:
 
 ## Just a funny little bonus 
 I connected the app to a Random Joke API endpoint to keep me motivated and to add to my absurd joke repertoire. 
+
+## This is still a work in progress 
+The current functionality of the app is mostly aligned with the intended purpose. However, there are certain elements that still need to be added. I am planning to include a separate tab within the Job Postings section of the navigation bar. This tab will lead to a new page containing links to various job postings or a centralized hub for top hiring services like Indeed and LinkedIn etc.
